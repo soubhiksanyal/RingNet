@@ -13,6 +13,8 @@ based on github.com/akanazawa/hmr
 # python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True
 ## To output both meshes and flame parameters run the following command
 # python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True
+## To output both meshes and flame parameters and generate a neutralized mesh run the following command
+# python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True --neutralize_expression=True
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -94,7 +96,7 @@ def preprocess_image(img_path):
     return crop, proc_param, img
 
 
-def main(config):
+def main(config, template_mesh):
     sess = tf.Session()
     model = RingNet_inference(config, sess=sess)
     input_img, proc_param, img = preprocess_image(config.img_path)
@@ -105,7 +107,6 @@ def main(config):
     if config.save_obj_file:
         if not os.path.exists(config.out_folder + '/mesh'):
             os.mkdir(config.out_folder + '/mesh')
-        template_mesh = load_model(config.flame_model_path)
         mesh = Mesh(v=vertices[0], f=template_mesh.f)
         mesh.write_obj(config.out_folder + '/mesh/' + config.img_path.split('/')[-1][:-4] + '.obj')
 
@@ -116,10 +117,19 @@ def main(config):
          'expression': flame_parameters[0][3+config.pose_params+config.shape_params:]}
         np.save(config.out_folder + '/params/' + config.img_path.split('/')[-1][:-4] + '.npy', flame_parameters_)
 
+    if config.neutralize_expression:
+        from util.using_flame_parameters import make_prdicted_mesh_neutral
+        if not os.path.exists(config.out_folder + '/neutral_mesh'):
+            os.mkdir(config.out_folder + '/neutral_mesh')
+        neutral_mesh = make_prdicted_mesh_neutral(config.out_folder + '/params/' + config.img_path.split('/')[-1][:-4] + '.npy', config.flame_model_path)
+        neutral_mesh.write_obj(config.out_folder + '/neutral_mesh/' + config.img_path.split('/')[-1][:-4] + '.obj')
+
+
+
 
 if __name__ == '__main__':
     config = get_config()
-    template_mesh = load_model(config.flame_model_path)
+    template_mesh = Mesh(filename='./flame_model/FLAME_sample.ply')
     renderer = vis_util.SMPLRenderer(faces=template_mesh.f)
 
     if not os.path.exists(config.out_folder):
@@ -128,4 +138,4 @@ if __name__ == '__main__':
     if not os.path.exists(config.out_folder + '/images'):
         os.mkdir(config.out_folder + '/images')
 
-    main(config)
+    main(config, template_mesh)

@@ -4,11 +4,11 @@ This is an official repository of the paper Learning to Regress 3D Face Shape an
 
 ```
 Learning to Regress 3D Face Shape and Expression from an Image without 3D Supervision
-Soubhik Sanyal, Timo Bolkart, Haiwen Feng, Michael J. Black 
+Soubhik Sanyal, Timo Bolkart, Haiwen Feng, Michael J. Black
 CVPR 2019
 ```
 
-More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf prepreint is also available in the [project page](https://ringnet.is.tue.mpg.de). 
+More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf prepreint is also available in the [project page](https://ringnet.is.tue.mpg.de).
 
 
 ## Installation
@@ -27,14 +27,16 @@ source <your_home_dir>/.virtualenvs/RingNet/bin/activate
 git clone https://github.com/soubhiksanyal/RingNet.git
 cd RingNet
 pip install -r requirements.txt
+pip install opendr==0.77
 mkdir model
 ```
-Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/mesh). 
+Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/mesh).
 
 ## Download models
 
 * Downlaod pretrained RingNet weights from the [project website](https://ringnet.is.tue.mpg.de), downloads page. Copy this inside the **model** folder
-* Download Flame model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh,i.e., to neutralize the expression and only using the shape as a template for other methods like [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca).
+* Download Flame model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh,i.e., to neutralize the pose and
+expression and only using the shape as a template for other methods like [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca).
 
 ## Demo
 
@@ -56,14 +58,14 @@ python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=Tr
 ```
 It will save a *.npy file of the predicted flame and camera parameters and in **./RingNet_output/params/**.
 
-If you want to play with the 3D mesh, i.e. neutralize expression the 3D mesh to use it as a template in [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca), run the following command
+If you want to play with the 3D mesh, i.e. neutralize pose and expression of the 3D mesh to use it as a template in [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca), run the following command
 ```
 python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True --neutralize_expression=True
 ```
 
 ## License
 
-Free for non-commercial and scientific research purposes. By using this code, you acknowledge that you have read the license terms (https://ringnet.is.tue.mpg.de/license), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code.
+Free for non-commercial and scientific research purposes. By using this code, you acknowledge that you have read the license terms (https://ringnet.is.tue.mpg.de/license), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code. For commercial use please check the website (https://ringnet.is.tue.mpg.de/license).
 
 ## Referencing RingNet
 
@@ -75,7 +77,7 @@ author = {Sanyal, Soubhik and Bolkart, Timo and Feng, Haiwen and Black, Michael}
 booktitle = {Proceedings IEEE Conf. on Computer Vision and Pattern Recognition (CVPR)},
 month = jun,
 year = {2019},
-month_numeric = {6} 
+month_numeric = {6}
 }
 ```
 

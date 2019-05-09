@@ -21,6 +21,9 @@ flags.DEFINE_boolean('save_obj_file', False,
 flags.DEFINE_boolean('save_flame_parameters', False,
                      'If true the camera and flame parameters will be saved')
 
+flags.DEFINE_boolean('neutralize_expression', False,
+                     'If true the camera and flame parameters will be saved')
+
 flags.DEFINE_string('flame_model_path', './flame_model/generic_model.pkl', 'path to the neurtral flame model')
 
 flags.DEFINE_string('load_path', PRETRAINED_MODEL, 'path to trained model')
