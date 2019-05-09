@@ -1,0 +1,9 @@
+numpy
+scipy
+matplotlib
+scikit-image
+chumpy
+opencv-python
+absl-py
+tensorflow-gpu==1.12.0
+ipdb
