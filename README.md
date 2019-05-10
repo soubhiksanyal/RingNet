@@ -15,7 +15,7 @@ More details on our NoW benchmark dataset, 3D face reconstruction challenge can 
 
 ## Installation
 
-The code uses Python 2.7 and it is tested on Tensorflow gpu version 1.12.0.
+The code uses Python 2.7 and it is tested on Tensorflow gpu version 1.12.0, with CUDA-9.0 and cuDNN-7.3.
 
 ### Setup RingNet Virtual Environment
 
