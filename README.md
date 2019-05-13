@@ -37,16 +37,22 @@ Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/m
 ## Download models
 
 * Downlaod pretrained RingNet weights from the [project website](https://ringnet.is.tue.mpg.de), downloads page. Copy this inside the **model** folder
-* Download Flame model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh,i.e., to neutralize the pose and
+* Download FLAME model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh,i.e., to neutralize the pose and
 expression and only using the shape as a template for other methods like [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca).
 
 ## Demo
 
-RingNet requires a loose crop of the face in the image. Run the following command from the terminal to check the predictions of RingNet
+RingNet requires a loose crop of the face in the image. 
+
+#### Output predicted mesh rendering
+
+Run the following command from the terminal to check the predictions of RingNet
 ```
 python -m demo --img_path *.jpg --out_folder ./RingNet_output
 ```
 Provide the image path and it will output the predictions in **./RingNet_output/images/**.
+
+#### Output predicted mesh
 
 If you want the output mesh then run the following command
 ```
@@ -54,11 +60,15 @@ python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=Tr
 ```
 It will save a *.obj file of the predicted mesh in **./RingNet_output/mesh/**.
 
-If you want the predicted flame and camera parameters then run the following command
+#### Output FLAME and camera parameters
+
+If you want the predicted FLAME and camera parameters then run the following command
 ```
 python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True
 ```
 It will save a *.npy file of the predicted flame and camera parameters and in **./RingNet_output/params/**.
+
+#### Generate VOCA templates
 
 If you want to play with the 3D mesh, i.e. neutralize pose and expression of the 3D mesh to use it as a template in [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca), run the following command
 ```
