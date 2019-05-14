@@ -42,13 +42,13 @@ expression and only using the shape as a template for other methods like [VOCA (
 
 ## Demo
 
-RingNet requires a loose crop of the face in the image. 
+RingNet requires a loose crop of the face in the image. We provide two sample images in the **input_images** folder which are taken from [CelebA Dataset](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html). 
 
 #### Output predicted mesh rendering
 
 Run the following command from the terminal to check the predictions of RingNet
 ```
-python -m demo --img_path *.jpg --out_folder ./RingNet_output
+python -m demo --img_path ./input_images/000001.jpg --out_folder ./RingNet_output
 ```
 Provide the image path and it will output the predictions in **./RingNet_output/images/**.
 
@@ -56,7 +56,7 @@ Provide the image path and it will output the predictions in **./RingNet_output/
 
 If you want the output mesh then run the following command
 ```
-python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True
+python -m demo --img_path ./input_images/000001.jpg --out_folder ./RingNet_output --save_obj_file=True
 ```
 It will save a *.obj file of the predicted mesh in **./RingNet_output/mesh/**.
 
@@ -64,7 +64,7 @@ It will save a *.obj file of the predicted mesh in **./RingNet_output/mesh/**.
 
 If you want the predicted FLAME and camera parameters then run the following command
 ```
-python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True
+python -m demo --img_path ./input_images/000001.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True
 ```
 It will save a *.npy file of the predicted flame and camera parameters and in **./RingNet_output/params/**.
 
@@ -72,7 +72,7 @@ It will save a *.npy file of the predicted flame and camera parameters and in **
 
 If you want to play with the 3D mesh, i.e. neutralize pose and expression of the 3D mesh to use it as a template in [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca), run the following command
 ```
-python -m demo --img_path *.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True --neutralize_expression=True
+python -m demo --img_path ./input_images/000013.jpg --out_folder ./RingNet_output --save_obj_file=True --save_flame_parameters=True --neutralize_expression=True
 ```
 
 ## License
