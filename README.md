@@ -10,7 +10,7 @@ Soubhik Sanyal, Timo Bolkart, Haiwen Feng, Michael J. Black
 CVPR 2019
 ```
 
-More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf prepreint is also available in the [project page](https://ringnet.is.tue.mpg.de).
+More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf preprint is also available on the [project page](https://ringnet.is.tue.mpg.de).
 
 
 ## Installation
