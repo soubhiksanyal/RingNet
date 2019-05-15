@@ -1,6 +1,7 @@
 """
 Author: Soubhik Sanyal
 Copyright (c) 2019, Soubhik Sanyal
+All rights reserved.
 
 Max-Planck-Gesellschaft zur Foerderung der Wissenschaften e.V. (MPG) is holder of all proprietary rights on this
 computer program.
@@ -12,7 +13,6 @@ Any use of the computer program without a valid license is prohibited and liable
 
 Copyright 2019 Max-Planck-Gesellschaft zur Foerderung der Wissenschaften e.V. (MPG). acting on behalf of its
 Max Planck Institute for Intelligent Systems and the Max Planck Institute for Biological Cybernetics.
-All rights reserved.
 
 More information about RingNet is available at https://ringnet.is.tue.mpg.de.
 """
