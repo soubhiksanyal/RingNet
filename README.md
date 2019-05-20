@@ -1,6 +1,6 @@
 # RingNet
 
-![alt text](https://ringnet.is.tue.mpg.de/uploads/ckeditor/pictures/63/ringnet_teaset.png)
+![alt text](https://github.com/soubhiksanyal/RingNet/blob/master/gif/celeba_reconstruction.gif?raw=true)
 
 This is an official repository of the paper Learning to Regress 3D Face Shape and Expression from an Image without 3D Supervision. The project was formerly referred by RingNet. The codebase consists of the inference code, i.e. give an face image using this code one can generate a 3D mesh of a complete head with the face region. For further details on the method please refer to the following publication,
 
