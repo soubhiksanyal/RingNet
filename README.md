@@ -93,6 +93,10 @@ month_numeric = {6}
 }
 ```
 
+## Contact
+
+If you have any questions you can contact us at soubhik.sanyal@tuebingen.mpg.de and timo.bolkart@tuebingen.mpg.de.
+
 ## Acknowledgement
 
 * We thank Raffi Enficiaud and Ahmed Osman for pushing the release of psbody.mesh.
