@@ -1,7 +1,7 @@
 numpy
 scipy
 matplotlib==2.2.3
-scikit-image<0.15
+scikit-image==0.10.1
 chumpy
 opencv-python
 absl-py
