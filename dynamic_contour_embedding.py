@@ -13,6 +13,9 @@ All rights reserved.
 More information about RingNet is available at https://ringnet.is.tue.mpg.de.
 """
 
+## A function to load the dynamic contour on a template mesh
+## Please cite the updated citaion from https://ringnet.is.tue.mpg.de if you use the dynamic contour for FLAME
+
 import numpy as np
 import pyrender
 import trimesh
@@ -27,15 +30,15 @@ def mesh_points_by_barycentric_coordinates(mesh_verts, mesh_faces, lmk_face_idx,
                     (mesh_verts[mesh_faces[lmk_face_idx], 2] * lmk_b_coords).sum(axis=1)]).T
     return dif1
 
-def load_dynamic_conture(template_flame_path='None', conture_embeddings_path='None', angle=0):
+def load_dynamic_contour(template_flame_path='None', contour_embeddings_path='None', angle=0):
     template_mesh = Mesh(filename=template_flame_path)
-    conture_embeddings_path = conture_embeddings_path
-    dynamic_lmks_embeddings = np.load(conture_embeddings_path, allow_pickle=True).item()
+    contour_embeddings_path = contour_embeddings_path
+    dynamic_lmks_embeddings = np.load(contour_embeddings_path, allow_pickle=True).item()
     lmk_face_idx = dynamic_lmks_embeddings['lmk_face_idx'][angle]
     lmk_b_coords = dynamic_lmks_embeddings['lmk_b_coords'][angle]
     dynamic_lmks = mesh_points_by_barycentric_coordinates(template_mesh.v, template_mesh.f, lmk_face_idx, lmk_b_coords)
 
-    # Visualization of the pose dependent conture on the template mesh
+    # Visualization of the pose dependent contour on the template mesh
     vertex_colors = np.ones([template_mesh.v.shape[0], 4]) * [0.3, 0.3, 0.3, 0.8]
     tri_mesh = trimesh.Trimesh(template_mesh.v, template_mesh.f,
                                vertex_colors=vertex_colors)
@@ -54,5 +57,5 @@ if __name__ == '__main__':
     # angle = 35.0 #in degrees
     angle = 0.0 #in degrees
     # angle = -16.0 #in degrees
-    conture_embeddings_path = './flame_model/flame_dynamic_embedding.npy'
-    load_dynamic_conture(template_flame_path='./flame_model/FLAME_sample.ply', conture_embeddings_path=conture_embeddings_path, angle=int(angle))
+    contour_embeddings_path = './flame_model/flame_dynamic_embedding.npy'
+    load_dynamic_contour(template_flame_path='./flame_model/FLAME_sample.ply', contour_embeddings_path=contour_embeddings_path, angle=int(angle))
