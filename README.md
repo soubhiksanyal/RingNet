@@ -15,13 +15,14 @@ More details on our NoW benchmark dataset, 3D face reconstruction challenge can 
 
 ## Installation
 
-The code uses Python 2.7 and it is tested on Tensorflow gpu version 1.12.0, with CUDA-9.0 and cuDNN-7.3.
+The code uses **Python 2.7** and it is tested on Tensorflow gpu version 1.12.0, with CUDA-9.0 and cuDNN-7.3.
 
 ### Setup RingNet Virtual Environment
 
 ```
 virtualenv --no-site-packages <your_home_dir>/.virtualenvs/RingNet
 source <your_home_dir>/.virtualenvs/RingNet/bin/activate
+pip install --upgrade pip==19.1.1
 ```
 ### Clone the project and install requirements
 
@@ -32,7 +33,9 @@ pip install -r requirements.txt
 pip install opendr==0.77
 mkdir model
 ```
-Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/mesh).
+Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/mesh). (This now only works with python 3, so donot install it)
+
+* Update: Please install the following [fork](https://github.com/TimoBolkart/mesh) for working with the mesh processing libraries with python 2.7 
 
 ## Download models
 
