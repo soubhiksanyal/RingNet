@@ -104,5 +104,6 @@ If you have any questions you can contact us at soubhik.sanyal@tuebingen.mpg.de 
 
 ## Acknowledgement
 
+* We thank [Ahmed Osman](https://github.com/ahmedosman) for his support in the tensorflow implementation of FLAME.
 * We thank Raffi Enficiaud and Ahmed Osman for pushing the release of psbody.mesh.
 * We thank Benjamin Pellkofer and Jonathan Williams for helping with our [RingNet project website](https://ringnet.is.tue.mpg.de).
