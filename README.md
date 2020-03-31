@@ -12,8 +12,9 @@ CVPR 2019
 
 More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf preprint is also available on the [project page](https://ringnet.is.tue.mpg.de).
 
-* Update: NoW Dataset is divided into Test set and Validation Set. **Ground Truth scans** are available for the Validation Set. Please Check our [project page](https://ringnet.is.tue.mpg.de) for more details.
+* **Update**: NoW Dataset is divided into Test set and Validation Set. **Ground Truth scans** are available for the Validation Set. Please Check our [project page](https://ringnet.is.tue.mpg.de) for more details.
 
+* **Update**: We have released a **PyTorch implementation of the decoder FLAME with dynamic conture loading** which can be directly used for training networks. Please check [FLAME_PyTorch](https://github.com/soubhiksanyal/FLAME_PyTorch) for the code.
 
 ## Installation
 
