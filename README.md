@@ -43,7 +43,7 @@ Install mesh processing libraries from [MPI-IS/mesh](https://github.com/MPI-IS/m
 ## Download models
 
 * Download pretrained RingNet weights from the [project website](https://ringnet.is.tue.mpg.de), downloads page. Copy this inside the **model** folder
-* Download FLAME model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh,i.e., to neutralize the pose and
+* Download FLAME 2019 model from [here](http://flame.is.tue.mpg.de/). Copy it inside the **flame_model** folder. This step is optional and only required if you want to use the output Flame parameters to play with the 3D mesh, i.e., to neutralize the pose and
 expression and only using the shape as a template for other methods like [VOCA (Voice Operated Character Animation)](https://github.com/TimoBolkart/voca).
 
 ## Demo
@@ -65,6 +65,14 @@ If you want the output mesh then run the following command
 python -m demo --img_path ./input_images/000001.jpg --out_folder ./RingNet_output --save_obj_file=True
 ```
 It will save a *.obj file of the predicted mesh in **./RingNet_output/mesh/**.
+
+#### Output textured mesh
+
+If you want the output the predicted mesh with the image projected onto the mesh as texture then run the following command
+```
+python -m demo --img_path ./input_images/000001.jpg --out_folder ./RingNet_output --save_texture=True
+```
+It will save a *.obj, *.mtl, and *.png file of the predicted mesh in **./RingNet_output/texture/**.
 
 #### Output FLAME and camera parameters
 
