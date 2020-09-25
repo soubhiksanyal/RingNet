@@ -126,7 +126,7 @@ def main(config, template_mesh):
     input_img, proc_param, img = preprocess_image(config.img_path)
     vertices, flame_parameters = model.predict(np.expand_dims(input_img, axis=0), get_parameters=True)
     cams = flame_parameters[0][:3]
-    # visualize(img, proc_param, vertices[0], cams, img_name=config.out_folder + '/images/' + config.img_path.split('/')[-1][:-4])
+    visualize(img, proc_param, vertices[0], cams, img_name=config.out_folder + '/images/' + config.img_path.split('/')[-1][:-4])
 
     if config.save_obj_file:
         if not os.path.exists(config.out_folder + '/mesh'):
