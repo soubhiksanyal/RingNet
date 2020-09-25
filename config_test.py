@@ -39,7 +39,13 @@ flags.DEFINE_boolean('save_flame_parameters', False,
 flags.DEFINE_boolean('neutralize_expression', False,
                      'If true the camera and flame parameters will be saved')
 
-flags.DEFINE_string('flame_model_path', './flame_model/generic_model.pkl', 'path to the neurtral flame model')
+flags.DEFINE_boolean('save_texture', False,
+                     'If true the texture map will be stored')
+
+flags.DEFINE_string('flame_model_path', './flame_model/generic_model.pkl', 'path to the neutral FLAME model')
+
+flags.DEFINE_string('flame_texture_data_path', './flame_model/texture_data_512.npy', 'path to the FLAME texture data')
+
 
 flags.DEFINE_string('load_path', PRETRAINED_MODEL, 'path to trained model')
 
