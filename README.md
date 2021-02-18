@@ -12,6 +12,8 @@ CVPR 2019
 
 More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf preprint is also available on the [project page](https://ringnet.is.tue.mpg.de).
 
+* **Update**: We have released the **evaluation code for NoW Benchmark challenge** [here](https://github.com/soubhiksanyal/now_evaluation).
+
 * **Update**: Add demo to build a texture for the reconstructed mesh from the input image.
 
 * **Update**: NoW Dataset is divided into Test set and Validation Set. **Ground Truth scans** are available for the Validation Set. Please Check our [project page](https://ringnet.is.tue.mpg.de) for more details.
