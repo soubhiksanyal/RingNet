@@ -96,7 +96,7 @@ python -m demo --img_path ./input_images/000013.jpg --out_folder ./RingNet_outpu
 
 ## License
 
-Free for non-commercial and scientific research purposes. By using this code, you acknowledge that you have read the license terms (https://ringnet.is.tue.mpg.de/license), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code. For commercial use please check the website (https://ringnet.is.tue.mpg.de/license).
+Free for non-commercial and scientific research purposes. By using this code, you acknowledge that you have read the license terms (https://ringnet.is.tue.mpg.de/license.html), understand them, and agree to be bound by them. If you do not agree with these terms and conditions, you must not use the code. For commercial use please check the website (https://ringnet.is.tue.mpg.de/license.html).
 
 ## Referencing RingNet
 
