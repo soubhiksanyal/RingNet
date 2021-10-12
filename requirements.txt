@@ -3,7 +3,7 @@ scipy==1.2.1
 matplotlib==2.2.3
 scikit-image==0.14.2
 chumpy==0.68
-opencv-python==4.0.0.21
+opencv-python==4.1.1.26
 absl-py
 tensorflow-gpu==1.12.0
 ipdb
