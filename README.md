@@ -12,6 +12,8 @@ CVPR 2019
 
 More details on our NoW benchmark dataset, 3D face reconstruction challenge can be found in our [project page](https://ringnet.is.tue.mpg.de). A pdf preprint is also available on the [project page](https://ringnet.is.tue.mpg.de).
 
+* **Update**: We have changed the license agreemnt for the RingNet code and pre-trained weights. Both are now available under **MIT license** excluding the NoW Challenge dataset.
+
 * **Update**: We have released the **evaluation code for NoW Benchmark challenge** [here](https://github.com/soubhiksanyal/now_evaluation).
 
 * **Update**: Add demo to build a texture for the reconstructed mesh from the input image.
